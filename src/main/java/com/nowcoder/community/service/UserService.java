@@ -159,4 +159,8 @@ public class UserService implements CommunityConstant {
     public void logout(String ticket) {
         loginTickerMapper.updateStatus(ticket, 1);
     }
+
+    public LoginTicket finLoginTicket(String ticket) {
+        return loginTickerMapper.selectByTicket(ticket);
+    }
 }
