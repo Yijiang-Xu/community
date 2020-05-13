@@ -12,7 +12,6 @@ import java.util.List;
 public interface DiscussPostMapper {
 
     /**
-     *
      * @param userId
      * @param offset 起始行的行号
      * @param limit  每页显示数据的个数
@@ -25,5 +24,7 @@ public interface DiscussPostMapper {
     int selectDiscussPostRows(@Param("userId") int userId);
 
     int insertDiscussPost(DiscussPost discussPost);
+
+    DiscussPost selectDiscussPostById(int id);
 
 }
