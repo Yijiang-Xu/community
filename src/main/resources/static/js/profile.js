@@ -1,3 +1,4 @@
+
 $(function(){
 	$(".follow-btn").click(follow);
 });
