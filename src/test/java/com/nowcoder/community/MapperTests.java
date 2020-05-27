@@ -1,7 +1,7 @@
 package com.nowcoder.community;
 
 import com.nowcoder.community.dao.DiscussPostMapper;
-import com.nowcoder.community.dao.LoginTickerMapper;
+import com.nowcoder.community.dao.LoginTicketMapper;
 import com.nowcoder.community.dao.MessageMapper;
 import com.nowcoder.community.dao.UserMapper;
 import com.nowcoder.community.entity.DiscussPost;
@@ -25,7 +25,7 @@ public class MapperTests {
     private UserMapper userMapper;
 
     @Autowired
-    LoginTickerMapper loginTickerMapper;
+    LoginTicketMapper loginTicketMapper;
 
     @Autowired
     private MessageMapper messageMapper;
@@ -89,17 +89,17 @@ public class MapperTests {
         loginTicket.setStatus(0);
         loginTicket.setExpired(new Date(System.currentTimeMillis() + 1000 * 60 * 10));
 
-        loginTickerMapper.insertLoginTicket(loginTicket);
+        loginTicketMapper.insertLoginTicket(loginTicket);
         System.out.println(loginTicket);
     }
 
     @Test
     public void testSelectLoginTicket() {
-        LoginTicket loginTicket = loginTickerMapper.selectByTicket("abc");
+        LoginTicket loginTicket = loginTicketMapper.selectByTicket("abc");
         System.out.println(loginTicket);
 
-        loginTickerMapper.updateStatus("abc", 1);
-        loginTicket = loginTickerMapper.selectByTicket("abc");
+        loginTicketMapper.updateStatus("abc", 1);
+        loginTicket = loginTicketMapper.selectByTicket("abc");
         System.out.println(loginTicket);
     }
 
