@@ -41,6 +41,9 @@ public interface CommunityConstant {
     // 发帖
     String TOPIC_PUBLISH = "publish";
 
+    // 删帖
+    String TOPIC_DELETE = "delete";
+
     // 权限：普通用户
     String AUTHORITY_USER = "user";
 
