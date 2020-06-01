@@ -31,7 +31,7 @@ import java.io.OutputStream;
 @RequestMapping("/user")
 public class UserController implements CommunityConstant {
 
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(UserController.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Value("${community.path.upload}")
     private String uploadPath;
@@ -144,7 +144,7 @@ public class UserController implements CommunityConstant {
         if (hostHolder.getUser() != null) {
             hasFollowed = followService.hasFollowed(hostHolder.getUser().getId(), ENTITY_TYPE_USER, userId);
         }
-        model.addAttribute("hasFollowed",hasFollowed);
+        model.addAttribute("hasFollowed", hasFollowed);
 
         return "/site/profile";
     }

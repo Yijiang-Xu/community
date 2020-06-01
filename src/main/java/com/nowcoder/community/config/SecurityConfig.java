@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
         http.authorizeRequests()
                 .antMatchers(
                         "/user/setting",
-                        "user/upload",
+                        "/user/upload",
                         "/discuss/add",
                         "/comment/add/**",
                         "/letter/**",

@@ -121,7 +121,7 @@ public class UserService implements CommunityConstant {
         }
     }
 
-    public Map<String, Object> login(String username, String password, int expiredSeconds) {
+    public Map<String, Object> login(String username, String password, long expiredSeconds) {
         Map<String, Object> map = new HashMap<>();
 
         //空值处理
@@ -177,7 +177,7 @@ public class UserService implements CommunityConstant {
         redisTemplate.opsForValue().set(redisKey, loginTicket);
     }
 
-    public LoginTicket finLoginTicket(String ticket) {
+    public LoginTicket findLoginTicket(String ticket) {
 //        return loginTicketMapper.selectByTicket(ticket);
         String redisKey = RedisKeyUtil.getTicketKey(ticket);
         return (LoginTicket) redisTemplate.opsForValue().get(redisKey);
